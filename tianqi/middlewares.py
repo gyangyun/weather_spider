@@ -6,7 +6,6 @@
 # https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 import random
 
-import redis
 from scrapy import signals
 from scrapy.exceptions import NotConfigured
 
@@ -202,5 +201,3 @@ class RandowmProxyMiddleware():
 
     def process_request(self, request, spider):
         request.headers['User-Agent'] = random.choice(self.user_agents)
-
-

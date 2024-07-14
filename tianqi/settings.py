@@ -67,9 +67,9 @@ DOWNLOADER_MIDDLEWARES = {
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     # 'scrapy_redis.pipelines.RedisPipeline': 300,
-    'tianqi.pipelines.RedisPipeline': 301,
-    'tianqi.pipelines.MongodbPipeline': 302,
-    'tianqi.pipelines.MysqlPipeline': 303,
+    #  'tianqi.pipelines.RedisPipeline': 301,
+    #  'tianqi.pipelines.MongodbPipeline': 302,
+    #  'tianqi.pipelines.MysqlPipeline': 303,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -118,14 +118,15 @@ DATABASES_CONFIG = {
 }
 
 # 配置scrapy_redis调度器，并且，爬虫爬取的时候必须继承自 ，RedisSpider
-SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+#  SCHEDULER = "scrapy_redis.scheduler.Scheduler"
 
 # Ensure all spiders share same duplicates filter through redis.
 # 配置过滤类
-DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+#  DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
 
 # Redis URL password为密码，若没有请删除即可
-REDIS_URL = 'redis://:password@127.0.0.1:6379'
+#  REDIS_URL = 'redis://:password@127.0.0.1:6379'
+#  REDIS_URL = 'redis://127.0.0.1:6379'
 
 
 # 爬虫退出时不清空redis内的数据

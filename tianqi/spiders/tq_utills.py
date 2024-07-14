@@ -8,6 +8,7 @@ def get_date_list(start_date='2011-01', end_date=datetime.datetime.now().strftim
     :param end_date:结束日期
     :return:2011-01-future
     '''
+
     try:
         all_date_list = []  # 新建一个列表保存日期
         start_date = [int(x) for x in start_date.split('-')]
@@ -34,6 +35,18 @@ def get_date_list(start_date='2011-01', end_date=datetime.datetime.now().strftim
     except Exception:
         return [start_date, end_date]
 
+def split_date_list(date_list):
+    old_date_list = []
+    new_date_list = []
+    for date in date_list:
+        year_s, month_s = date.split('-')
+        year = int(year_s)
+        month = int(month_s)
+        if year < 2017:
+            old_date_list.append(f'{year}{month}')
+        else:
+            new_date_list.append(f'{year}{month_s}')
+    return old_date_list, new_date_list
+
 date = get_date_list(start_date=datetime.datetime.now().strftime("%Y-%m"),
                      end_date=datetime.datetime.now().strftime("%Y-%m"))
-
